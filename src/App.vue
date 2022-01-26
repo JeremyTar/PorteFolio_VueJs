@@ -7,6 +7,7 @@
       <router-link to="/travel" title="my travel"><img src="./assets/icone/landscape.png" class="icones"></router-link>
     </div>
     <img src="./assets/background.jpg" alt="Background mountain" class="background">
+    <router-link to="/secret" title="Let's TMB" class="goToTmb"><i class="fas fa-mountain"></i></router-link>
     <router-view/>
   </div>
 </template>
@@ -48,6 +49,16 @@
     z-index: -2;
     width: 100%;
     height: 100%;
+  }
+}
+
+.goToTmb {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  i{ 
+    font-size: 1.5em;
+    color : black;
   }
 }
 

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Cv from '../views/Cv.vue';
 import Project from '../views/Project.vue';
 import Travel from '../views/Travel.vue';
+import Secret from '../views/Secret.vue';
 
 
 Vue.use(VueRouter)
@@ -29,6 +30,11 @@ export default new VueRouter({
       path: '/travel',
       name: 'Travel',
       component: Travel   
+    },
+    {
+      path: '/secret',
+      name: 'Secret',
+      component: Secret
     }
 ]
 

@@ -127,6 +127,7 @@ p{
   display: flex;
   width: 70%;
   justify-content: space-around;
+  margin: auto;
   button {
     background: transparent;
     font-size: 1.3em;

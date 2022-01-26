@@ -5,7 +5,7 @@
                   :backSpeed="55"
                   :backDelay="1500"
                   :loop="true">
-      <h2>a <span class="typing"></span></h2>
+      <p>a <span class="typing"></span></p>
     </vue-typed-js>
   </div>
 </template>
@@ -16,13 +16,17 @@ export default {
 }
 </script>
 
-<style scoped>
-h2 {
-  margin: 0!important;
+<style lang="scss" scoped>
+@import "../style/Variable.scss";
+
+p {
+  margin: 10ox 0!important;
   font-family: "robot";
-}
-span{
-  color: #157F1F;
-  font-family: 'philosopher';
+  span{
+    color: $primarycolor;
+    font-family: 'philosopher';
+    font-size: 2em;
+    font-weight: 800;
+  }
 }
 </style>

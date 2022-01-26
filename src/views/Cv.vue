@@ -13,27 +13,27 @@
           <i class="fas fa-user-graduate"></i>
           <p>BTS : Negociation et relation client</p>
         </div>
-        <div class="graduate1">
-          <p>2015</p>
-        </div>
-        <div class="graduate2">
-          <p>2017</p>
-        </div>
         <div class="commerce_xp AddApparitionCardRight">
-          <h3>Expérience profesionnelles</h3>
+          <h3>Expériences profesionnelles</h3>
           <carouselXp></carouselXp>
         </div>
         <div class="commerce_projects">
           <h3>Projects</h3>
           <div class="commerce_projects_selfcare">
-            <a href="https://jeremytar.github.io/Selfcare-Immobilier/"><img src="../assets/ImgLogo/selfcare.png" alt="logo sci" width="150" height="150"></a>
+            <a href="https://jeremytar.github.io/Selfcare-Immobilier/"
+              ><img
+                src="../assets/ImgLogo/selfcare.png"
+                alt="logo sci"
+                width="150"
+                height="150"
+            /></a>
             <div class="commerce_projects_selfcare_description">
               <h5>Selfcare immobiler</h5>
-              <p>Selfcare immobilier est une entreprise de coaching immobilier situé à Clermont-ferrand.</p>
+              <p>
+                Selfcare immobilier est une entreprise de coaching immobilier
+                situé à Clermont-ferrand.
+              </p>
             </div>
-          </div>
-          <div>
-            <img src="" alt="">
           </div>
         </div>
       </section>
@@ -47,14 +47,20 @@
         <div class="musique_techno">
           <h3>Techno</h3>
           <div class="logiciels">
-            <div>
-              <img src="../assets/ImgLogo/Ableton-Logo.png" alt="ableton logo" class="logo1">
-              <p>description du logiciel</p>
+            <div class="ableton">
+              <img
+                src="../assets/ImgLogo/Ableton-Logo.png"
+                alt="ableton logo"
+                class="logo1"
+              />
             </div>
             <div class="musique_separation"></div>
-            <div>
-              <img src="../assets/ImgLogo/traktor.png" alt="traktor logo" class="logo2">
-              <p>description du logiciel</p>
+            <div class="traktor">
+              <img
+                src="../assets/ImgLogo/traktor.png"
+                alt="traktor logo"
+                class="logo2"
+              />
             </div>
           </div>
         </div>
@@ -64,14 +70,64 @@
         <div class="ligneIt"></div>
         <div class="it_graduate">
           <h3>Graduate</h3>
-          <p>Openclassroom diplome de niveau 5</p>
+          <div>
+            <a href="https://openclassrooms.com/fr"
+              ><img src="../assets/ImgLogo/OC.png" alt="logo OpenClassroom"
+            /></a>
+            <p>Diplome de devellopeur web : RNCP de niveau 5</p>
+          </div>
         </div>
         <div class="it_skills">
           <h3>Skills</h3>
-          <ul>
-            <li>Angular</li>
-            <li>Vue</li>
-          </ul>
+          <div class="skillsContenair">
+            <div class="database">
+              <i class="fas fa-database"></i>
+              <p>Base de données et ORM</p>
+              <div class="expand">
+                <button v-on:click="showDB()">
+                  <i class="fas fa-expand-alt"></i>
+                </button>
+              </div>
+            </div>
+            <div class="backend">
+              <i class="fas fa-server"></i>
+              <p>Backend</p>
+                <button v-on:click="showBack()">
+                  <i class="fas fa-expand-alt"></i>
+                </button>
+            </div>
+            <div class="frontend">
+              <i class="fas fa-laptop"></i>
+              <p>Frontend</p>
+              <div class="expand">
+                <button v-on:click="showFront()">
+                  <i class="fas fa-expand-alt"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="database_skills" v-if="this.showDivDB == true">
+            <ul>
+              <li><img src="../assets/ImgLogo/mongodb.png" alt="logo Mongo DB" /></li>
+              <li><img src="../assets/ImgLogo/Mysql.png" alt="" /></li>
+            </ul>
+            <button v-on:click="showDB()"><i class="fas fa-expand-alt"></i></button>
+          </div>
+          <div class="backSkills" v-if="this.showDivBack == true">
+            <ul>
+              <li><img src="../assets/ImgLogo/nodejs.png" alt="" /></li>
+              <li><img src="../assets/ImgLogo/typeOrm.png" alt="" /></li>
+              <li><img src="../assets/ImgLogo/prisma.png" alt="" /></li>
+            </ul>
+          </div>
+          <div class="frontSkills" v-if="this.showDivFront == true">
+            <ul>
+              <li><img src="../assets/ImgLogo/angular.png" alt="" /></li>
+              <li><img src="../assets/ImgLogo/Vuejs.png" alt="" /></li>
+              <li><img src="../assets/ImgLogo/sass.png" alt="" /></li>
+              <li><img src="../assets/ImgLogo/bootstrap.png" alt="" /></li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
@@ -79,9 +135,8 @@
 </template>
 
 <script>
-import carouselXp from "../components/carrouselXp.vue"
-import carouselSpore from "../components/carrouselSpore.vue"
-
+import carouselXp from "../components/carrouselXp.vue";
+import carouselSpore from "../components/carrouselSpore.vue";
 
 export default {
   name: "Cv",
@@ -90,7 +145,11 @@ export default {
     carouselSpore,
   },
   data() {
-    return {};
+    return {
+      showDivDB: false,
+      showDivBack: false,
+      showDivFront: false,
+    };
   },
   methods: {
     SeeScroll() {
@@ -119,18 +178,16 @@ export default {
           .querySelector(".it_skills")
           .classList.remove("AddApparitionCardLeft");
       }
-      if(x >= 150) {
+      if (x >= 150) {
         document
           .querySelector(".commerce_projects")
-          .classList.add("AddApparitionCardLeft")
+          .classList.add("AddApparitionCardLeft");
       }
       if (x >= 600) {
         document
           .querySelector(".musiqueTitle")
           .classList.add("titleApparition");
-        document
-          .querySelector(".musique")
-          .classList.add("AddApparitionBlock");
+        document.querySelector(".musique").classList.add("AddApparitionBlock");
         document
           .querySelector(".musique_creation")
           .classList.add("AddApparitionCardRight");
@@ -149,9 +206,39 @@ export default {
           .classList.add("AddApparitionCardLeft");
       }
     },
-    mounted() {
-      
+    showDB() {
+      let datadiv = document.querySelector(".database_skills");
+      if (this.showDivDB == true) {
+        this.showDivDB == false;
+        datadiv.classList.remove("itSkills");
+      } else {
+        this.showDivDB == true;
+        datadiv.classList.add("itSkills");
+      }
     },
+    showBack() {
+      console.log(this.showDivBack)
+      if (this.showDivBack == false) {
+        this.showDivBack == true
+        console.log(this.showDivBack)
+      }
+      else {        
+        this.showDivBack == true
+        console.log(this.showDivBack)
+      }
+    },
+      showFront() {
+      console.log(this.showDivFront)
+      if (this.showDivFront == true){
+        this.showDivFront == false
+        console.log(this.showDivFront)
+      }
+      else {        
+        this.showDivFront == true
+        console.log(this.showDivFront)
+
+      }
+    }
   },
 };
 </script>
@@ -172,15 +259,18 @@ export default {
   align-items: center;
   justify-content: center;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-size: 2em;
   color: $primarycolor;
   font-family: "philosopher";
 }
-p, li {
+p,
+li {
   color: $secondarycolor;
-  font-family: 'roboto';
-  font-size: 1.2em;
+  font-family: "roboto";
+  font-size: 1.1em;
 }
 #Ligne {
   width: 90%;
@@ -196,7 +286,6 @@ p, li {
     align-items: center;
     justify-content: center;
   }
-
 
   /* BLOCK COMMERCE */
 
@@ -219,11 +308,12 @@ p, li {
         font-size: 1.5em;
       }
     }
-    .commerce_graduate1::before, .commerce_graduate2::before {
+    .commerce_graduate1::before,
+    .commerce_graduate2::before {
       content: "";
       width: 55px;
-      height: 10px;
-      background-color: green;
+      height: 5px;
+      background-color: $primarycolor;
       z-index: 5;
       margin-left: -15px;
       margin-right: 15px;
@@ -235,18 +325,10 @@ p, li {
       left: 50px;
       grid-area: 2 / 1 / 2 / 2;
       @include transparent__card;
-            i {
+      i {
         margin: 0 15px;
         font-size: 1.5em;
       }
-    }
-    .graduate1 {
-      grid-area: 1 / 2 / 2 / 2;
-      @include dateCv;
-    }
-    .graduate2 {
-      grid-area: 2 / 2 / 2 / 2;
-      @include dateCv;
     }
     .commerce_xp {
       position: relative;
@@ -254,6 +336,7 @@ p, li {
       grid-area: 3 / 3 / 3 / 4;
       @include transparent__card;
       opacity: 0;
+      padding: 15px;
     }
     .commerce_projects {
       position: relative;
@@ -270,10 +353,10 @@ p, li {
           flex-direction: column;
           justify-content: space-around;
           h5 {
-            font-size: 2em;
+            font-size: 1.5em;
             margin: 0;
             color: $secondarycolor;
-            font-family: 'athene';
+            font-family: "athene";
           }
         }
       }
@@ -302,7 +385,7 @@ p, li {
     }
     .ligneMusique {
       width: 32px;
-      background-color: green;
+      background-color: $primarycolor;
       margin: 15px auto;
       z-index: 2;
       clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0% 90%);
@@ -327,15 +410,76 @@ p, li {
         justify-content: space-evenly;
         margin: auto;
         .musique_separation {
-            width: 5px;
-            height: 150px;
-            background-color: $primarycolor;
+          width: 3px;
+          height: 75px;
+          background-color: $secondarycolor;
+          margin-top: 20px;
         }
-        .logo1 {
-          height: 100px;
+        .ableton {
+          width: 50%;
+          padding: 10px;
+          .logo1 {
+            height: 100px;
+          }
         }
-        .logo2 {
-          height: 100px;
+        .ableton:hover:before {
+          opacity: 1;
+        }
+        .ableton::before {
+          content: "Ableton est un logiciel MAO (composition assité par ordinateur) adapté pour le live et la production musicale.";
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          top: -125px;
+          right: 180px;
+          clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 75%,
+            45% 74%,
+            15% 100%,
+            23% 75%,
+            0% 75%
+          );
+          background-color: rgba(9, 82, 40, 0.7);
+          color: #fff;
+          font-family: "roboto";
+          opacity: 0;
+          transition: 0.5s ease;
+          @include transparent__before;
+        }
+        .traktor {
+          width: 50%;
+          padding: 10px;
+          .logo2 {
+            height: 100px;
+          }
+        }
+        .traktor:hover:before {
+          opacity: 1;
+        }
+        .traktor::before {
+          content: "Traktor est une référence parmis les logiciel de djing. Utilisable avec controlleur et/ou platine.";
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          top: -125px;
+          left: 180px;
+          clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 75%,
+            78% 75%,
+            88% 100%,
+            53% 75%,
+            0% 75%
+          );
+          background-color: rgba(9, 82, 40, 0.7);
+          color: #fff;
+          font-family: "roboto";
+          transition: 0.5s ease;
+          opacity: 0;
+          @include transparent__before;
         }
       }
     }
@@ -346,7 +490,7 @@ p, li {
   .it {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr;
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     opacity: 0;
@@ -355,11 +499,11 @@ p, li {
     }
     .ligneIt {
       width: 32px;
-      background-color: green;
+      background-color: $primarycolor;
       margin: 15px auto;
       z-index: 2;
       clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0% 90%);
-      grid-area: 1 / 2 / 5 / 3;
+      grid-area: 1 / 2 / 4 / 2;
     }
     .it_graduate {
       position: relative;
@@ -368,6 +512,10 @@ p, li {
       grid-area: 1 / 3 / 1 / 3;
       opacity: 0;
       @include transparent__card;
+      img {
+        width: 80%;
+        margin: auto;
+      }
     }
     .it_skills {
       position: relative;
@@ -375,8 +523,61 @@ p, li {
       grid-area: 2 / 1 / 2 / 1;
       opacity: 0;
       @include transparent__card;
+      .skillsContenair {
+        display: flex;
+        flex-wrap: wrap;
+        .database,
+        .backend,
+        .frontend {
+          width: 33%;
+          i {
+            font-size: 1.5em;
+          }
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+          }
+          img {
+            width: 90%;
+          }
+        }
+        .backend::before {
+          content: "";
+          position: absolute;
+          left: 32%;
+          top: 25%;
+          bottom: 10%;
+          width: 3px;
+          background-color: $secondarycolor;
+          margin: 10px;
+        }
+        .backend::after {
+          content: "";
+          position: absolute;
+          right: 32%;
+          top: 25%;
+          bottom: 10%;
+          width: 3px;
+          background-color: $secondarycolor;
+          margin: 10px;
+        }
+      }
     }
   }
+}
+
+.database_skills {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(0);
+  background: $primarycolor;
+  z-index: -1;
 }
 
 #Ligne::-webkit-scrollbar {
@@ -399,5 +600,9 @@ p, li {
 
 .AddApparitionCardLeft {
   animation: apparitionCardLeft 2s ease forwards;
+}
+
+.itSkills {
+  animation: 1s skillsIt forwards;
 }
 </style>

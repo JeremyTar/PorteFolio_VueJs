@@ -12,13 +12,12 @@
           <p>"Trouve un travail qui te plait et tu ne travailleras plus..."</p>
           <span>Confucius</span>    
         </div>
-        <div class="social">
+        <div class="social">         
           <a href="https://www.linkedin.com/in/jeremy-tardini-2b9575226/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/JeremyTar" target="_blank"><i class="fab fa-github"></i></a>
           <a href="tel:0638369414"><i class="fas fa-phone-alt"></i></a>
           <a href="mailto:jeremy.tardini@gmail.com"><i class="fas fa-at"></i></a>
-        </div>
-        <div>
+          <a href="Cv.pdf"><i class="fas fa-file-alt"></i></a>
         </div>
       </div>
     </div>
@@ -50,7 +49,7 @@ export default {
     width: 80%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     .photo {
       height: 300px;
       border: 10px solid $primarycolor;
@@ -64,7 +63,7 @@ export default {
       }
     }
 .presentation {
-    width: 50%;
+    width: 30%;
     text-align: left;
     margin: 10px 25px;
     .text {
@@ -91,7 +90,7 @@ export default {
       margin: 25px;
       i {
         font-size: 2em;
-        color: #157F1F;
+        color: $primarycolor;
         }
       }
     }
