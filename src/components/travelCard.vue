@@ -1,13 +1,13 @@
 <template>
     <div class="travelCard">
         <div class="description">
-            <p>{{ this.name }}</p>
+            <h2>{{ this.name }}</h2>
             <p>{{ this.description }}</p>
+
 
 
         </div>
         <div class="video">
-            <p>test video</p>
             <span v-html="this.youtube"></span>
         </div>
     </div>
@@ -32,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/mixin.scss";
+@import "../style/Variable.scss";
 
 .travelCard {
     @include transparent__card;
@@ -44,4 +45,20 @@ export default {
     margin: 15px;
 }
 
+h2 {
+    font-family: 'philosopher';
+    color: $primarycolor;
+}
+h2::before {
+    content: "";
+    width: 75px;
+    height: 3px;
+    position: absolute;
+    top: 45px;
+    background-color: $primarycolor ;
+}
+
+p {
+    font-family: 'roboto';
+}
 </style>

@@ -7,7 +7,7 @@
       <router-link to="/travel" title="my travel"><img src="./assets/icone/landscape.png" class="icones"></router-link>
     </div>
     <img src="./assets/background.jpg" alt="Background mountain" class="background">
-    <router-link to="/secret" title="Let's TMB" class="goToTmb"><i class="fas fa-mountain"></i></router-link>
+    <!-- <router-link to="/secret" title="Let's TMB" class="goToTmb"><i class="fas fa-mountain"></i></router-link> -->
     <router-view/>
   </div>
 </template>
