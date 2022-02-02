@@ -84,25 +84,25 @@
               <i class="fas fa-database"></i>
               <p>Base de données et ORM</p>
               <div class="expand">
-                <button v-on:click="showDB()">
+                <!-- <button v-on:click="showDB()">
                   <i class="fas fa-expand-alt"></i>
-                </button>
+                </button> -->
               </div>
             </div>
             <div class="backend">
               <i class="fas fa-server"></i>
               <p>Backend</p>
-                <button v-on:click="showBack()">
+                <!-- <button v-on:click="showBack()">
                   <i class="fas fa-expand-alt"></i>
-                </button>
+                </button> -->
             </div>
             <div class="frontend">
               <i class="fas fa-laptop"></i>
               <p>Frontend</p>
               <div class="expand">
-                <button v-on:click="showFront()">
+                <!-- <button v-on:click="showFront()">
                   <i class="fas fa-expand-alt"></i>
-                </button>
+                </button> -->
               </div>
             </div>
           </div>

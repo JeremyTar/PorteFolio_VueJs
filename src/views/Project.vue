@@ -8,6 +8,7 @@
         v-bind:url="project.url"
         v-bind:activity="project.activity"
         v-bind:name="project.name"
+        v-bind:link="project.link"
       ></projectCard>
     </div>
   </div>
@@ -31,20 +32,16 @@ export default {
         id: 1,
         url: require("../assets/ImgProject/selfcare.png"),
         activity: "Immobilier",
-        name: "SelfcareImmobilier"
+        name: "SelfcareImmobilier",
+        link: "www.selfacreimmobilier.fr"
         },
         {
         id: 2,
         url: require("../assets/ImgProject/portefolio.png"),
         activity: "Perso",
-        name: "Portefolio"
+        name: "Portefolio",
+        link: "www.sayadini.fr/jeremy_tardini"
         },
-        {
-        id: 3,
-        url: require("../assets/ImgProject/djing.jpg"),
-        activity: "Musique",
-        name:"Spore Musique"
-        }
       ] 
     }
      
@@ -56,7 +53,8 @@ export default {
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../style/Variable.scss";
 
 .container {
   width: 100%;
@@ -66,5 +64,10 @@ export default {
   flex-wrap: wrap;
   margin: auto;
   padding: 0;
+}
+
+.project h1 {
+  color: $primarycolor;
+  font-family: 'philosopher';
 }
 </style>
