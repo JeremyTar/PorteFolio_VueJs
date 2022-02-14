@@ -26,16 +26,25 @@
   box-sizing: border-box;
   #nav {
     display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
-    z-index: 0;
     position: absolute;
-    top: 150px;
-    left: 100px;
     padding: 30px;
-    width: 175px;
-    height: 60%;
     @include transparent__card;
+    @media (min-width: 769px) {
+      flex-direction: column;
+      z-index: 0;
+      top: 150px;
+      left: 100px;
+      width: 150px;
+      height: 60%; 
+    }
+    @media (max-width: 768px) {
+      z-index: 2;
+      left: 60px;
+      right: 60px;
+      top: 20px;
+      height: 110px;
+    }
     .icones {
       width: 75px;
       height: 75px;
@@ -69,9 +78,24 @@
 .page {
   @include transparent__card;
   position: absolute;
-  top: 80px;
-  left: 280px;
-  width: 80%;
-  height: 80%;
+  margin: 25px;
+  padding: 55px;
 }
+@media (min-width: 769px) {
+  .page {
+    top: 80px;
+    bottom: 80px;
+    right: 120px;
+    left: 280px;
+  }
+}
+@media (max-width: 767px) {
+  .page {
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    top: 105px;
+  }
+}
+
 </style>

@@ -40,58 +40,72 @@ export default {
 <style lang="scss" scoped>
 @import "../style/Variable.scss";
 
-.home{
+.home {
   display:flex;
   justify-content: center;
   align-items: center;
+  margin: 25px;
+  padding: 100px 55px 55px 55px;
+  
   .container {
-    height: 50%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    overflow: scroll;
     .photo {
-      height: 300px;
+      height: 250px;
+      width: 100%;
+      min-width: 250px;
+      max-width: 400px;
       border: 10px solid $primarycolor;
       padding: 10px;
       border-radius: 25px;
-      box-shadow: 5px 5px 5px rgba(0,0,0, 0.3);
+      box-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
       img {
         height: 100%;
+        width: 100%;
         border-radius: 15px;
         object-fit: cover;
       }
     }
-.presentation {
-    width: 30%;
-    text-align: left;
-    margin: 10px 25px;
-    .text {
-      h1 {
-        color: $primarycolor;
-        font-size: 3em;
-        margin: 0!important;
-        font-family: 'philosopher';   
-      }
-      p {
-        color: $secondarycolor;
-        font-size: 1.2em;        
-      }
-      span {
-        font-weight: 500;
-        font-size: 1em;
-        color: $secondarycolor;        
-      }
+  }
+  .container::-webkit-scrollbar {
+  width: 0 !important;
+  }
+  .presentation {
+  width: 30%;
+  max-width: 600px;
+  min-width: 300px;
+  text-align: left;
+  margin: 10px 25px;
+  .text {
+    h1 {
+      color: $primarycolor;
+      font-size: 3em;
+      margin: 0!important;
+      font-family: 'philosopher';   
     }
-    .social {
-      width:90%;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 25px;
-      i {
-        font-size: 2em;
-        color: $primarycolor;
-        }
+    p {
+      color: $secondarycolor;
+      font-size: 1.2em;        
+    }
+    span {
+      font-weight: 500;
+      font-size: 1em;
+      color: $secondarycolor;        
+    }
+  }
+  .social {
+    width:90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px;
+    i {
+      font-size: 2em;
+      color: $primarycolor;
       }
     }
   }

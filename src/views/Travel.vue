@@ -63,7 +63,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+@import "../style/Variable.scss";
+
 .container {
   width: 100%;
   height: 80%;
@@ -74,7 +76,12 @@ export default {
 
 }
 .container::-webkit-scrollbar {
-    width: 0 !important
+    width: 0 !important;
+}
+
+h1 {
+  font-family: 'philosopher';
+  color: $primarycolor
 }
 
 
