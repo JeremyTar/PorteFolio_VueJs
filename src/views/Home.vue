@@ -58,7 +58,7 @@ export default {
     .photo {
       height: 250px;
       width: 100%;
-      min-width: 250px;
+      min-width: 150px;
       max-width: 400px;
       border: 10px solid $primarycolor;
       padding: 10px;
@@ -76,9 +76,9 @@ export default {
   width: 0 !important;
   }
   .presentation {
-  width: 30%;
-  max-width: 600px;
-  min-width: 300px;
+  width: 50%;
+  max-width: 350px;
+  min-width: 150px;
   text-align: left;
   margin: 10px 25px;
   .text {

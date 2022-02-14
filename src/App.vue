@@ -27,28 +27,49 @@
   #nav {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     position: absolute;
-    padding: 30px;
     @include transparent__card;
-    @media (min-width: 769px) {
+    @media (min-width: 860px) {
       flex-direction: column;
-      z-index: 0;
+      z-index: 2;
       top: 150px;
-      left: 100px;
-      width: 150px;
-      height: 60%; 
+      left: 75px;
+      width: 7%;
+      min-width: 95px;
+      height: 60%;
+      padding: 30px;
+      .icones {
+        width: 75px;
+        height: 75px;
+        z-index: 2;
+      } 
     }
-    @media (max-width: 768px) {
+    @media (min-width: 426px) and (max-width: 859px) {
       z-index: 2;
       left: 60px;
       right: 60px;
       top: 20px;
-      height: 110px;
+      height: 80px;
+      padding: 30px;
+      .icones {
+        width: 70px;
+        height: 70px;
+        z-index: 2;
+      } 
     }
-    .icones {
-      width: 75px;
-      height: 75px;
+    @media (max-width: 425px) {
       z-index: 2;
+      left: 25px;
+      right: 25px;
+      top: 35px;
+      height: 75px;
+      padding: 15px;
+      .icones {
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+      }
     }
   }
   .background {
@@ -81,20 +102,29 @@
   margin: 25px;
   padding: 55px;
 }
-@media (min-width: 769px) {
+@media (min-width: 860px) {
   .page {
-    top: 80px;
-    bottom: 80px;
-    right: 120px;
-    left: 280px;
+    top: 50px;
+    bottom: 50px;
+    right: 50px;
+    left: 170px;
   }
 }
-@media (max-width: 767px) {
+@media (min-width: 426px) and (max-width: 859px) {
   .page {
     bottom: 20px;
-    right: 20px;
-    left: 20px;
     top: 105px;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+  }
+}
+@media (max-width: 425px) {
+  .page {
+    top: 105px;
+    left: -25px;
+    right: -25px;
+    bottom: 5px;
   }
 }
 
