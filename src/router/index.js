@@ -12,27 +12,27 @@ Vue.use(VueRouter)
 export default new VueRouter({
   routes: [
     {
-      path: '/',
+      path: '/JeremyTardini',
       name: 'Home',
       component: Home
     },
     {
-      path: '/cv',
+      path: '/JeremyTardini/cv',
       name: 'Cv',
       component: Cv
     },
     {
-      path: '/project',
+      path: '/JeremyTardini/project',
       name: 'Project',
       component: Project   
     },
     {
-      path: '/travel',
+      path: '/JeremyTardini/travel',
       name: 'Travel',
       component: Travel   
     },
     {
-      path: '/secret',
+      path: '/JeremyTardini/secret',
       name: 'Secret',
       component: Secret
     }

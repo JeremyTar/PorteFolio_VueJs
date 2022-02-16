@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Titlle : {{ album[this.j].name }}</p>
+    <p>Title : {{ album[this.j].name }}</p>
     <div class="carousel">
       <div class="buttonPochette1">
         <button v-if="this.j != 0" v-on:click="previous">
@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p {
+    font-family: "roboto";
+    font-size: 1em;
+}
 .carousel {
   width: 100%;
   display: flex;
@@ -83,9 +87,7 @@ export default {
     }
   }
   img {
-    width: 250px;
-    height: 250px;
-    margin: 25px;
+    margin: 25px 0;
   }
 }
 </style>

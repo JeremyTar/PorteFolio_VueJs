@@ -46,23 +46,7 @@
         </div>
         <div class="musique_techno">
           <h3>Techno</h3>
-          <div class="logiciels">
-            <div class="ableton">
-              <img
-                src="../assets/ImgLogo/Ableton-Logo.png"
-                alt="ableton logo"
-                class="logo1"
-              />
-            </div>
-            <div class="musique_separation"></div>
-            <div class="traktor">
-              <img
-                src="../assets/ImgLogo/traktor.png"
-                alt="traktor logo"
-                class="logo2"
-              />
-            </div>
-          </div>
+          <carouselTechno></carouselTechno>
         </div>
       </section>
       <h2 class="itTitle">IT</h2>
@@ -77,6 +61,16 @@
             <p>Diplome de devellopeur web : RNCP de niveau 5</p>
           </div>
         </div>
+
+        <div>
+          <h2>Frontend</h2>
+          <div>
+            
+          </div>
+
+        </div>
+
+
         <div class="it_skills">
           <h3>Skills</h3>
           <div class="skillsContenair">
@@ -137,12 +131,14 @@
 <script>
 import carouselXp from "../components/carrouselXp.vue";
 import carouselSpore from "../components/carrouselSpore.vue";
+import carouselTechno from "../components/carrouselTechno.vue"
 
 export default {
   name: "Cv",
   components: {
     carouselXp,
     carouselSpore,
+    carouselTechno,
   },
   data() {
     return {
@@ -270,7 +266,7 @@ p,
 li {
   color: $secondarycolor;
   font-family: "roboto";
-  font-size: 1.1em;
+  font-size: 1em;
 }
 #Ligne {
   width: 90%;
@@ -393,95 +389,17 @@ li {
     }
     .musique_creation {
       position: relative;
-      left: 50px;
       @include transparent__card;
       grid-area: 2 / 1 / 2 / 1;
       opacity: 0;
+      left: 50px;
     }
     .musique_techno {
       position: relative;
-      left: -50px;
       @include transparent__card;
       grid-area: 1 / 3 / 1 / 3;
       opacity: 0;
-      .logiciels {
-        width: 95%;
-        display: flex;
-        justify-content: space-evenly;
-        margin: auto;
-        .musique_separation {
-          width: 3px;
-          height: 75px;
-          background-color: $secondarycolor;
-          margin-top: 20px;
-        }
-        .ableton {
-          width: 50%;
-          padding: 10px;
-          .logo1 {
-            height: 100px;
-          }
-        }
-        .ableton:hover:before {
-          opacity: 1;
-        }
-        .ableton::before {
-          content: "Ableton est un logiciel MAO (composition assité par ordinateur) adapté pour le live et la production musicale.";
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          top: -125px;
-          right: 180px;
-          clip-path: polygon(
-            0% 0%,
-            100% 0%,
-            100% 75%,
-            45% 74%,
-            15% 100%,
-            23% 75%,
-            0% 75%
-          );
-          background-color: rgba(9, 82, 40, 0.7);
-          color: #fff;
-          font-family: "roboto";
-          opacity: 0;
-          transition: 0.5s ease;
-          @include transparent__before;
-        }
-        .traktor {
-          width: 50%;
-          padding: 10px;
-          .logo2 {
-            height: 100px;
-          }
-        }
-        .traktor:hover:before {
-          opacity: 1;
-        }
-        .traktor::before {
-          content: "Traktor est une référence parmis les logiciel de djing. Utilisable avec controlleur et/ou platine.";
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          top: -125px;
-          left: 180px;
-          clip-path: polygon(
-            0% 0%,
-            100% 0%,
-            100% 75%,
-            78% 75%,
-            88% 100%,
-            53% 75%,
-            0% 75%
-          );
-          background-color: rgba(9, 82, 40, 0.7);
-          color: #fff;
-          font-family: "roboto";
-          transition: 0.5s ease;
-          opacity: 0;
-          @include transparent__before;
-        }
-      }
+      left: -50px;
     }
   }
 
@@ -490,7 +408,7 @@ li {
   .it {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 25px;
     grid-row-gap: 25px;
     opacity: 0;
@@ -503,7 +421,7 @@ li {
       margin: 15px auto;
       z-index: 2;
       clip-path: polygon(0 0, 50% 10%, 100% 0, 100% 90%, 50% 100%, 0% 90%);
-      grid-area: 1 / 2 / 4 / 2;
+      grid-area: 1 / 2 / 5 / 3;
     }
     .it_graduate {
       position: relative;
