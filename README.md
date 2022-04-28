@@ -1,6 +1,5 @@
-# real_portefolio
+# Portefolio
 
-view demo here ;) www.jeremytardini.sayadini.fr
 
 ## Project setup
 ```
